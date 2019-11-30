@@ -2,10 +2,7 @@ package dxb
 
 import (
 	"context"
-	"fmt"
 	"time"
-
-	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 func NewTimoutContext(second int64) context.Context {
@@ -18,8 +15,3 @@ func NewBackgroundContext() context.Context {
 }
 
 var DefaultContext = NewBackgroundContext
-
-func SortBy(option *options.FindOptions, key string, desc bool) *options.FindOptions {
-	fmt.Println("TODO: Build the sort options:", key, desc)
-	return option
-}
